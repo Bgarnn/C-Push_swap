@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 		exit(0);
 	var_init(&data);
 	input_get(&data, argv);
+	// ranking(&data);
 	
 	t_node *curr = data.a_top;
 	while (curr)
@@ -29,5 +30,9 @@ int main(int argc, char **argv)
 		printf("stack_b :%d\n", curb->value);
 		curr = curb->next;
 	}
+
+	lst_clear(&data.a_top);
+	lst_clear(&data.b_top);
+	return (0);
 
 }

@@ -1,12 +1,14 @@
 #include "push_swap.h"
 
-static int	valid_and_flow(char *str, int sign, int result, t_data *data)
+static int	valid_and_flow(char *str, int sign, t_data *data)
 {
 	int	i;
 	int	digit;
+	int	result;
 	char	*ptr;
 
 	i = 0;
+	result = 0;
 	ptr = str;
 	while (ptr[i])
 	{
@@ -26,12 +28,10 @@ static int	re_atoi(char *str, t_data *data)
 {
 	int	i;
 	int	sign;
-	int	result;
 	char	*ptr;
 
 	i = 0;
 	sign = 1;
-	result = 0;
 	while (str[i] == ' ' || ((str[i] >= 9) && (str[i] <= 13)))
 		i++;
 	if (str[i] == '+')
@@ -41,10 +41,10 @@ static int	re_atoi(char *str, t_data *data)
 		sign = -1;
 		i++;
 	}
-	if (str[i] == '\0' || ft_isdigit(str[i]) == 0)
+	if (str[i] == '\0' || !(str[i] >= '0' && str[i] <= '9'))
 		error_clear(data);
 	ptr = &str[i];
-	return (valid_and_flow(ptr, sign, result, data));
+	return (valid_and_flow(ptr, sign, data));
 }
 
 static void	free_split(char **ptr)

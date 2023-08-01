@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static void	lst_clear(t_node **stack)
+void	lst_clear(t_node **stack)
 {
 	t_node	*tmp;
 
