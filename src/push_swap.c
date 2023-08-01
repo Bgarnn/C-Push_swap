@@ -14,6 +14,6 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		exit(0);
 	var_init(&data);
-	input_get(&data.a_top, &data.b_top, argv);
+	input_get(&data, argv);
 
 }

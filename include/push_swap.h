@@ -19,9 +19,8 @@ typedef struct s_data
 	struct s_node	*b_top;
 }				t_data;
 
-void	input_get(t_node **stack_a, t_node **stack_b, char **argv);
-void	error_clear(t_node **stack_a, t_node **stack_b);
-void	free_split(char **ptr);
-void	error_clear_1(t_node **stack);
+void	input_get(t_data *data, char **argv);
+void	error_clear(t_data *data);
+void	add_to_stack(t_node **stack_a, int val);
 
 #endif

@@ -4,7 +4,7 @@ CC	=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror -I$(DIR_INC) -I$(LIBFT_DIR)
 
-SRCS	=	push_swap.c input_get.c clear_and_free.c\
+SRCS	=	push_swap.c input_get.c ft_lst.c\
 
 DIR_INC	=	include
 DIR_SRC	=	src
