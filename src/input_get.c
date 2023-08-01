@@ -12,11 +12,6 @@ static int	valid_and_flow(char *str, int sign, int result, t_node **stack_a)
 	{
 		if (!(ptr[i] >= '0' && ptr[i] <= '9'))
 			error_clear_1(stack_a);
-		i++;
-	}
-	i = 0;
-	while (ptr[i] >= '0' && ptr[i] <= '9')
-	{
 		digit = ptr[i] - '0';
 		if (((sign == 1) && (result > (2147483647 - digit) / 10)) 
 			|| ((sign == -1) && (result > (2147483648 - digit) / 10)))
