@@ -23,5 +23,6 @@ void	input_get(t_data *data, char **argv);
 void	error_clear(t_data *data);
 void	lst_clear(t_node **stack);
 void	add_to_stack(t_node **stack_a, int val);
+int	lst_sorted(t_data *data);
 
 #endif

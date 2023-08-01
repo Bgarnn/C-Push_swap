@@ -1,5 +1,19 @@
 #include "push_swap.h"
 
+int	lst_sorted(t_data *data)
+{
+	t_node	*ptr;
+
+	ptr = data->a_top;
+	while (ptr && ptr->next)
+	{
+		if (ptr->rank > ptr->next->rank)
+			return (0);
+		ptr = ptr->next;
+	}
+	return (1);
+}
+
 void	lst_clear(t_node **stack)
 {
 	t_node	*tmp;

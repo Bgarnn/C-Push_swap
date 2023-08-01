@@ -58,6 +58,8 @@ int main(int argc, char **argv)
 	input_get(&data, argv);
 	dup_check(&data);
 	ranking(&data);
+	if (!lst_sorted(&data))
+		// sort_check(&data);
 	
 	// t_node *curr = data.a_top;
 	// while (curr)
