@@ -91,14 +91,12 @@ void	input_get(t_data *data, char **argv)
 		j = 0;
 		while (argv_split[j])
 		{
-			int m = re_atoi(argv_split[j], data);
-			printf("%d\n", m);
-			// add_to_stack(&data->a_top, re_atoi(argv_split[j], data));
+			add_to_stack(&data->a_top, re_atoi(argv_split[j], data));
 			j++;
 		}
 		free_split(argv_split);
-		// if (!data->a_top)
-		// 	error_clear(data);
+		if (!data->a_top)
+			error_clear(data);
 		i++;
 	}
 }

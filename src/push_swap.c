@@ -15,5 +15,19 @@ int main(int argc, char **argv)
 		exit(0);
 	var_init(&data);
 	input_get(&data, argv);
+	
+	t_node *curr = data.a_top;
+	while (curr)
+	{
+		printf("stack_a :%d\n", curr->value);
+		curr = curr->next;
+	}
+
+	t_node *curb = data.b_top;
+	while (curb)
+	{
+		printf("stack_b :%d\n", curb->value);
+		curr = curb->next;
+	}
 
 }
