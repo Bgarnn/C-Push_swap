@@ -1,5 +1,46 @@
 #include "push_swap.h"
 
+static void	dup_check(t_data *data)
+{
+	t_node	*current;
+	t_node	*loop;
+
+	loop = data->a_top;
+	while (loop)
+	{
+		current = loop->next;
+		while (current)
+		{
+			if (current->value == loop->value)
+				error_clear(data);
+			current = current->next;
+		}
+		loop = loop->next;
+	}
+}
+
+static void	ranking(t_data *data)
+{
+	int	i;
+	t_node	*current;
+	t_node	*loop;
+
+	loop = data->a_top;
+	while (loop)
+	{
+		current = data->a_top;
+		i = 1;
+		while (current)
+		{
+			if (current->value < loop->value)
+				i++;
+			current = current->next;
+		}
+		loop->rank = i;
+		loop = loop->next;
+	}
+}
+
 static void	var_init(t_data *data)
 {
 	data->a_top = NULL;
@@ -15,12 +56,20 @@ int main(int argc, char **argv)
 		exit(0);
 	var_init(&data);
 	input_get(&data, argv);
-	// ranking(&data);
+	dup_check(&data);
+	ranking(&data);
 	
+	// t_node *curr = data.a_top;
+	// while (curr)
+	// {
+	// 	printf("stack_a :%d\n", curr->value);
+	// 	curr = curr->next;
+	// }
+
 	t_node *curr = data.a_top;
 	while (curr)
 	{
-		printf("stack_a :%d\n", curr->value);
+		printf("stack_a :%d\n", curr->rank);
 		curr = curr->next;
 	}
 
