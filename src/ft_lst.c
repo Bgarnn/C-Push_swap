@@ -15,19 +15,19 @@ int	lst_len(t_node *stack)
 	return (i);
 }
 
-int	lst_sorted(t_data *data)
-{
-	t_node	*ptr;
+// int	lst_sorted(t_data *data)
+// {
+// 	t_node	*ptr;
 
-	ptr = data->a_top;
-	while (ptr && ptr->next)
-	{
-		if (ptr->rank > ptr->next->rank)
-			return (0);
-		ptr = ptr->next;
-	}
-	return (1);
-}
+// 	ptr = data->a_top;
+// 	while (ptr && ptr->next)
+// 	{
+// 		if (ptr->rank > ptr->next->rank)
+// 			return (0);
+// 		ptr = ptr->next;
+// 	}
+// 	return (1);
+// }
 
 void lst_add_back(t_node **stack_a, int val)
 {

@@ -37,7 +37,7 @@ void	pb(t_data *data)
 	tmp = data->a_top;
 	data->a_top = data->a_top->next;
 	tmp->next = data->b_top;
-	data->b_top = tmp;
+	data->b_top = tmp;	
 	data->size_b++;
 	data->size_a--;
 	write(1, "pb\n", 3);

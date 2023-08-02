@@ -62,16 +62,25 @@ int main(int argc, char **argv)
 	input_get(&data, argv);
 	dup_check(&data);
 	ranking(&data);
-	if (!lst_sorted(&data))
-		sort_check(&data);
-		// printf("not sort\n");
+	// if (!lst_sorted(&data))
+	// 	sort_check(&data);
+
+	t_node *curr2 = data.a_top;
+	while (curr2)
+	{
+		printf("stack_a :%d\n", curr2->rank);
+		curr2 = curr2->next;
+	}
+
+
+	pb(&data);
+	pb(&data);
+	pb(&data);
+	pa(&data);
+	ra(&data);
+	rb(&data);
+	sa(&data);
 	
-	// t_node *curr = data.a_top;
-	// while (curr)
-	// {
-	// 	printf("stack_a :%d\n", curr->value);
-	// 	curr = curr->next;
-	// }
 
 	t_node *curr = data.a_top;
 	while (curr)
@@ -83,12 +92,11 @@ int main(int argc, char **argv)
 	t_node *curb = data.b_top;
 	while (curb)
 	{
-		printf("stack_b :%d\n", curb->value);
-		curr = curb->next;
+			printf("stack_b :%d\n", curb->rank);
+			curb = curb->next;
 	}
 
 	lst_clear(&data.a_top);
 	lst_clear(&data.b_top);
 	return (0);
-
 }
