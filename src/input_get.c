@@ -91,7 +91,7 @@ void	input_get(t_data *data, char **argv)
 		j = 0;
 		while (argv_split[j])
 		{
-			add_to_stack(&data->a_top, re_atoi(argv_split[j], data));
+			lst_add_back(&data->a_top, re_atoi(argv_split[j], data));
 			j++;
 		}
 		free_split(argv_split);

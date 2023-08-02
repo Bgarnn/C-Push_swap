@@ -45,7 +45,11 @@ static void	var_init(t_data *data)
 {
 	data->a_top = NULL;
 	data->b_top = NULL;
-
+	data->size_a = 0;
+	data->size_b = 0;
+	data->size_block = 0;
+	data->move_upper = 0;
+	data->move_lower = 1;
 }
 
 int main(int argc, char **argv)
@@ -59,7 +63,8 @@ int main(int argc, char **argv)
 	dup_check(&data);
 	ranking(&data);
 	if (!lst_sorted(&data))
-		// sort_check(&data);
+		sort_check(&data);
+		// printf("not sort\n");
 	
 	// t_node *curr = data.a_top;
 	// while (curr)
