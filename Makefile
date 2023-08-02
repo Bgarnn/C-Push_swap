@@ -23,13 +23,11 @@ all: $(NAME)
 
 clean:
 		@$(RM) $(NAME)
-		@echo "Push_Swap has Removed"
 		@make clean -C libft
 
 
 fclean:
 		@$(RM) $(NAME)
-		@echo "Push_Swap has Removed"
 		@make fclean -C libft
 
 re: fclean all

@@ -62,6 +62,9 @@ int main(int argc, char **argv)
 	input_get(&data, argv);
 	dup_check(&data);
 	ranking(&data);
+
+
+	
 	if (!lst_sorted(&data))
 		sort_check(&data);
 	

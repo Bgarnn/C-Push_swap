@@ -38,23 +38,23 @@ static void	three_or_less(t_data *data)
 		&& data->a_top->value < data->a_top->next->next->value)
 		sa(data);
 	else if (data->a_top->value > data->a_top->next->value
-		&& data->a_top->next->value > data->a_top->next->next->value)
-	{
-		sa(data);
-		rra(data);
-	}
-	else if (data->a_top->value > data->a_top->next->value
 		&& data->a_top->next->value < data->a_top->next->next->value)
 		ra(data);
+	else if (data->a_top->next->next->value < data->a_top->value
+		&& data->a_top->next->next->value < data->a_top->next->value)
+		rra(data);
 	else if (data->a_top->value < data->a_top->next->next->value
 		&& data->a_top->next->value > data->a_top->next->next->value)
 	{
 		sa(data);
 		ra(data);
 	}
-	else if (data->a_top->next->next->value < data->a_top->value
-		&& data->a_top->next->next->value < data->a_top->next->value)
+	else if (data->a_top->value > data->a_top->next->value
+		&& data->a_top->next->value > data->a_top->next->next->value)
+	{
+		sa(data);
 		rra(data);
+	}
 }
 
 static void	five_or_less(t_data *data)
@@ -69,7 +69,7 @@ static void	five_or_less(t_data *data)
 		else
 			ra (data);
 	}
-	three_or_less (data);
+	three_or_less(data);
 	while (data->b_top)
 	{
 		if (data->b_top->next == NULL)
@@ -90,16 +90,22 @@ void	sort_check(t_data *data)
 		three_or_less(data);
 	else if (data->size_a <= 5)
 		five_or_less(data);
-	// else if (data->size_a <= 100)
-	// {
-	// 	data->size_block = 20;
-	// 	a_to_b(data);
-	// 	b_to_a(data);
-	// }
-	// else
-	// {
-	// 	data->size_block = 50;
-	// 	a_to_b(data);
-	// 	b_to_a(data);		
-	// }
+	else if (data->size_a <= 100)
+	{
+		data->size_block = 5;
+		a_to_b(data);
+		t_node *curb = data->b_top;
+		while (curb)
+		{
+			printf("stack_b :%d\n", curb->rank);
+			curb = curb->next;
+		}
+		b_to_a(data);
+	}
+	else
+	{
+		data->size_block = 50;
+		a_to_b(data);
+		b_to_a(data);		
+	}
 }
