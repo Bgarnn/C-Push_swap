@@ -1,5 +1,31 @@
 #include "push_swap.h"
 
+// void	a_to_b(t_data *data)
+// {
+// 	int	i;
+// 	int	block;
+
+// 	i = 0;
+// 	block = 1;
+// 	while (data->a_top)
+// 	{
+// 		if(data->a_top->rank <= block * data->size_block)
+// 		{
+// 			pb(data);
+// 			if(data->size_b > 1)
+// 			{
+// 				if(data->b_top->rank < ((block * data->size_block) - (data->size_block / 2)))
+// 					rb(data);
+// 			}
+// 			i++;
+// 		}
+// 		else
+// 			ra(data);
+// 		if (i == (block * data->size_block))
+// 			block++;
+// 	}
+// }
+
 // static void	rrb(t_data *data)
 // {
 // 	t_node	*tmp;

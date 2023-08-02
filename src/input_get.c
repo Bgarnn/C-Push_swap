@@ -99,5 +99,4 @@ void	input_get(t_data *data, char **argv)
 			error_clear(data);
 		i++;
 	}
-	data->size_a = lst_len(data->a_top);
 }

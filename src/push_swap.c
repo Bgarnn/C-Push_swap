@@ -62,25 +62,12 @@ int main(int argc, char **argv)
 	input_get(&data, argv);
 	dup_check(&data);
 	ranking(&data);
-	// if (!lst_sorted(&data))
-	// 	sort_check(&data);
-
-	t_node *curr2 = data.a_top;
-	while (curr2)
-	{
-		printf("stack_a :%d\n", curr2->rank);
-		curr2 = curr2->next;
-	}
-
-
-	pb(&data);
-	pb(&data);
-	pb(&data);
-	pa(&data);
-	ra(&data);
-	rb(&data);
-	sa(&data);
+	if (!lst_sorted(&data))
+		sort_check(&data);
 	
+	// data.size_a = lst_len(data.a_top);
+	// // ra(&data);
+	// rra(&data);
 
 	t_node *curr = data.a_top;
 	while (curr)
