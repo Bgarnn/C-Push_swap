@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 14:49:48 by kburalek          #+#    #+#             */
+/*   Updated: 2023/08/03 14:49:49 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	error_clear(t_data *data)
@@ -29,9 +41,9 @@ static void	dup_check(t_data *data)
 
 static void	ranking(t_data *data)
 {
-	int	i;
-	t_node	*current;
+	int		i;
 	t_node	*loop;
+	t_node	*current;
 
 	loop = data->a_top;
 	while (loop)
@@ -57,7 +69,7 @@ static void	var_init(t_data *data)
 	data->size_b = 0;
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 

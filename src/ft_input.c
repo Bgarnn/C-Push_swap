@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_input.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 14:49:08 by kburalek          #+#    #+#             */
+/*   Updated: 2023/08/03 14:49:15 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	valid_and_flow(char *str, int sign, t_data *data)
 {
-	int	i;
-	int	digit;
-	int	result;
+	int		i;
+	int		digit;
+	int		result;
 	char	*ptr;
 
 	i = 0;
@@ -26,8 +38,8 @@ static int	valid_and_flow(char *str, int sign, t_data *data)
 
 static int	re_atoi(char *str, t_data *data)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	char	*ptr;
 
 	i = 0;
@@ -62,7 +74,7 @@ static void	free_split(char **ptr)
 
 static int	ft_is_nspace(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -76,8 +88,8 @@ static int	ft_is_nspace(char *str)
 
 void	input_get(t_data *data, char **argv)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 	char	**argv_split;
 
 	i = 1;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_action.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 14:48:53 by kburalek          #+#    #+#             */
+/*   Updated: 2023/08/03 14:48:56 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	pa(t_data *data)
@@ -24,7 +36,7 @@ void	pb(t_data *data)
 	tmp = data->a_top;
 	data->a_top = data->a_top->next;
 	tmp->next = data->b_top;
-	data->b_top = tmp;	
+	data->b_top = tmp;
 	data->size_b++;
 	data->size_a--;
 	write(1, "pb\n", 3);

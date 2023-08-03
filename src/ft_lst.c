@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 14:49:25 by kburalek          #+#    #+#             */
+/*   Updated: 2023/08/03 14:49:27 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	lst_len(t_node *stack)
 {
-	int i;
+	int		i;
 	t_node	*current;
 
 	i = 0;
@@ -29,10 +41,10 @@ int	lst_sorted(t_data *data)
 	return (1);
 }
 
-void lst_add_back(t_node **stack_a, int val)
+void	lst_add_back(t_node **stack_a, int val)
 {
-	t_node *new_node;
-	t_node *current;
+	t_node	*new_node;
+	t_node	*current;
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)

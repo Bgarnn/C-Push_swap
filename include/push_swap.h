@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 14:48:27 by kburalek          #+#    #+#             */
+/*   Updated: 2023/08/03 14:48:30 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -17,8 +29,8 @@ typedef struct s_data
 {
 	struct s_node	*a_top;
 	struct s_node	*b_top;
-	int	size_a;
-	int	size_b;
+	int				size_a;
+	int				size_b;
 }				t_data;
 
 void	input_get(t_data *data, char **argv);
