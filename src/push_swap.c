@@ -1,5 +1,13 @@
 #include "push_swap.h"
 
+void	error_clear(t_data *data)
+{
+	lst_clear(&data->a_top);
+	lst_clear(&data->b_top);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+
 static void	dup_check(t_data *data)
 {
 	t_node	*current;
@@ -47,9 +55,6 @@ static void	var_init(t_data *data)
 	data->b_top = NULL;
 	data->size_a = 0;
 	data->size_b = 0;
-	data->size_block = 0;
-	data->move_upper = 0;
-	data->move_lower = 1;
 }
 
 int main(int argc, char **argv)
@@ -62,30 +67,8 @@ int main(int argc, char **argv)
 	input_get(&data, argv);
 	dup_check(&data);
 	ranking(&data);
-
-
-	
 	if (!lst_sorted(&data))
 		sort_check(&data);
-	
-	// data.size_a = lst_len(data.a_top);
-	// // ra(&data);
-	// rra(&data);
-
-	t_node *curr = data.a_top;
-	while (curr)
-	{
-		printf("stack_a :%d\n", curr->rank);
-		curr = curr->next;
-	}
-
-	t_node *curb = data.b_top;
-	while (curb)
-	{
-			printf("stack_b :%d\n", curb->rank);
-			curb = curb->next;
-	}
-
 	lst_clear(&data.a_top);
 	lst_clear(&data.b_top);
 	return (0);

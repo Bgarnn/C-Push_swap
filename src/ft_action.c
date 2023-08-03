@@ -1,18 +1,5 @@
 #include "push_swap.h"
 
-void	sa(t_data *data)
-{
-	t_node	*tmp;
-
-	if (data->size_a < 2)
-		return ;
-	tmp = data->a_top;
-	data->a_top = data->a_top->next;
-	tmp->next = data->a_top->next;
-	data->a_top->next = tmp;
-	write(1, "sa\n", 3);
-}
-
 void	pa(t_data *data)
 {
 	t_node	*tmp;
@@ -75,4 +62,21 @@ void	rb(t_data *data)
 		bottom = bottom->next;
 	bottom->next = tmp;
 	write(1, "rb\n", 3);
+}
+
+void	rra(t_data *data)
+{
+	t_node	*tmp;
+	t_node	*first;
+
+	if (data->size_a <= 1)
+		return ;
+	tmp = data->a_top;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	first = data->a_top;
+	data->a_top = tmp->next;
+	tmp->next = NULL;
+	data->a_top->next = first;
+	write(1, "rra\n", 4);
 }

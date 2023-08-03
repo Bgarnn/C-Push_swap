@@ -65,10 +65,15 @@ void	lst_clear(t_node **stack)
 	*stack = NULL;
 }
 
-void	error_clear(t_data *data)
+void	sa(t_data *data)
 {
-	lst_clear(&data->a_top);
-	lst_clear(&data->b_top);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	t_node	*tmp;
+
+	if (data->size_a < 2)
+		return ;
+	tmp = data->a_top;
+	data->a_top = data->a_top->next;
+	tmp->next = data->a_top->next;
+	data->a_top->next = tmp;
+	write(1, "sa\n", 3);
 }
