@@ -16,8 +16,8 @@ Welcome to Push_swap, a project focused on efficiently sorting stacks using a mi
 To compile the Push_swap program, follow these straightforward steps:
 
   - Clone the Repository:
-    - git clone git@github.com:Bgarnn/02-Push_swap.git
-    - cd 02-Push_swap
+    - git clone git@github.com:Bgarnn/C-PushSwap.git
+    - cd C-PushSwap
   - Compile the Program:
     - make: This will generate the push_swap executable.
   - Clean the Build:
